@@ -8,10 +8,12 @@
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	<link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-hash/0.2.1/leaflet-hash.min.js"></script>
 	<script>
 		var map;
 		$(function() {
 			map = new L.Map('map', {center: new L.LatLng(34.9717, 138.3888), zoom: 16});
+			var hash = new L.Hash(map);
 			var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 			var osmAttrib='Map data © OpenStreetMap contributors';
 			var osm = new L.TileLayer(osmUrl, {minZoom: 5, maxZoom: 17, attribution: osmAttrib, opacity: 0.8});
